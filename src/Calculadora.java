@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 
 public class Calculadora {
 	
-	//Se utiliza concepto de modularidad y buenas practicas de codificación
+	//Se utiliza concepto de modularidad y buenas practicas de codificaciï¿½n
 	
 	private static int numero1;
 	private static int numero2;
@@ -19,11 +19,11 @@ public class Calculadora {
 
 	public static void main(String[] args) 
 	{
-		System.out.println("Elija la operación que desea realizar: \n"
+		System.out.println("Elija la operaciï¿½n que desea realizar: \n"
 				+ "1.Suma\n"
 				+ "2.Resta\n"
-				+ "3.Multiplicación\n"
-				+ "4.División\n"
+				+ "3.Multiplicaciï¿½n\n"
+				+ "4.Divisiï¿½n\n"
 				+ "5.Exponente\n"
 				+ "6.Modulo\n");
 		//Metodo para elegir la operacion
@@ -32,13 +32,14 @@ public class Calculadora {
 	//Metodo para elegir la operacion a ejecutar
 	public static void setElegirOperacion()
 	{
-		//Almacena el numero de la operación que el usuario desea realizar
-				operacion_a_realizar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de la operación que desea realizar: "));
+		//Almacena el numero de la operaciï¿½n que el usuario desea realizar
+				operacion_a_realizar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de la operaciï¿½n que desea realizar: "));
 				
-		//If para decidir la operación a realizar
+		//If para decidir la operaciï¿½n a realizar
 				if(operacion_a_realizar==1)
 				{//Suma			
-					
+				 resultado=getSuma(getPedirNumero1(), getPedirNumero2());
+                                 System.out.println("la suma es: "+resultado);
 				}
 				else if(operacion_a_realizar==2)
 				{//Resta
@@ -76,11 +77,15 @@ public class Calculadora {
 
 		return numero2;
 	}
-	
+	//Metodo get para calcular la suma entre dos numeros
+        public static int getSuma(int numero1,int numero2)
+        {
+            return(numero1+numero2);
+        }
 	//Metodo get para calcular el modulo entre dos numeros
 	public static int getModulo(int divisor,int dividendo)
 	{
 		return (divisor%dividendo);
 	}
-
+    
 }
