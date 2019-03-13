@@ -39,7 +39,7 @@ public class Calculadora {
 				if(operacion_a_realizar==1)
 				{//Suma			
 				 resultado=getSuma(getPedirNumero1(), getPedirNumero2());
-                                 System.out.println("la suma es: "+resultado);
+                                 System.out.println("La suma es: "+resultado);
 				}
 				else if(operacion_a_realizar==2)
 				{//Resta
