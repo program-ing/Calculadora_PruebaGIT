@@ -51,7 +51,8 @@ public class Calculadora {
 				}
 				else if(operacion_a_realizar==4)
 				{//Division
-					
+					resultado=getDivision(getPedirNumero1(), getPedirNumero2());
+                                        System.out.println("la division es: "+resultado);
 				}
 				else if(operacion_a_realizar==5)
 				{//Exponente
@@ -87,5 +88,11 @@ public class Calculadora {
 	{
 		return (divisor%dividendo);
 	}
+        
+        //Metodo get para calcular la division entre dos numeros
+        public static int getDivision(int numero1,int numero2)
+        {
+            return(numero1/numero2);
+        }
     
 }
