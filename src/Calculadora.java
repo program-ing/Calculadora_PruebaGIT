@@ -19,11 +19,11 @@ public class Calculadora {
 
 	public static void main(String[] args) 
 	{
-		System.out.println("Elija la operaci�n que desea realizar: \n"
+		System.out.println("Elija la operacion que desea realizar: \n"
 				+ "1.Suma\n"
 				+ "2.Resta\n"
-				+ "3.Multiplicaci�n\n"
-				+ "4.Divisi�n\n"
+				+ "3.Multiplicacion\n"
+				+ "4.Division\n"
 				+ "5.Exponente\n"
 				+ "6.Modulo\n");
 		//Metodo para elegir la operacion
@@ -33,7 +33,7 @@ public class Calculadora {
 	public static void setElegirOperacion()
 	{
 		//Almacena el numero de la operaci�n que el usuario desea realizar
-				operacion_a_realizar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de la operaci�n que desea realizar: "));
+				operacion_a_realizar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de la operacion que desea realizar: "));
 				
 		//If para decidir la operaci�n a realizar
 				if(operacion_a_realizar==1)
