@@ -56,6 +56,9 @@ public class Calculadora {
 				}
 				else if(operacion_a_realizar==5)
 				{//Exponente
+                                    
+                                    resultado=getExpoente(getPedirNumero1(), getPedirNumero2());
+                                    System.out.println("El resultado es: "+ resultado);
 					
 				}
 				else if(operacion_a_realizar==6)
@@ -93,6 +96,15 @@ public class Calculadora {
         public static int getDivision(int numero1,int numero2)
         {
             return(numero1/numero2);
+        }
+        //Metodo get para calcular el exponente de un numero
+        public static double getExpoente(int numero1, int numero2)
+        {
+          double num1,num2;
+          
+          num1 = numero1*1.0;
+          num2 = numero2*1.0;
+            return (Math.pow(num1, num2));
         }
     
 }
