@@ -57,7 +57,7 @@ public class Calculadora {
 				else if(operacion_a_realizar==5)
 				{//Exponente
                                     
-                                    resultado=getExpoente(getPedirNumero1(), getPedirNumero2());
+                                    resultado = (int) getExpoente(getPedirNumero1(), getPedirNumero2());
                                     System.out.println("El resultado es: "+ resultado);
 					
 				}
