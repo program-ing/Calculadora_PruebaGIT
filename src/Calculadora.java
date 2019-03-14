@@ -49,7 +49,7 @@ public class Calculadora {
 				else if(operacion_a_realizar==3)
 				{//Multiplicacion
  					resultado=getMultiplicacion(getPedirNumero1(), getPedirNumero2());
-					System.out.println("La multiplicación es: "+resultado);
+					System.out.println("La multiplicacion es: "+resultado);
 				}
 				else if(operacion_a_realizar==4)
 				{//Division
