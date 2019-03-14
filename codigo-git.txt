@@ -1,0 +1,152 @@
+git init... marca el inicio de nuesto proyecto
+git status... nos dice el estado de nuestro proyecto
+git add ... es para agregar
+git add -A ... es para agregar todos
+git commit -m "Mensaje" ... Sirve para guardarlos, entre comillas poner un mensaje muy especifico
+git log ... nos va a dar todos los commit y el mensaje
+git checkout "código"... viajamos en el tiempo
+git checkout master ... mueve al último.
+git reset ... algo parecido en git chekout pero este elimina los commit
+git reset --soft 
+git reset --mixed no borra el staging area ni el working area
+git reset --hard borra todo, el código todo
+git log > commits.txt ... guarda toda la información
+git help ... nos dará la información
+git help status
+git help add
+
+RAMAS Y FUSIONES (Si funcionó)
+git branch -- nos muestra las ramas
+git branch Test -- crea 
+git branch -D ... Borra todas las ramas si no la estamos usando
+git checkout ... se mueve de master a test, colores o a otra rama.
+git branch -b Text ... crea rama y se mueve a esa rama	
+
+Fusiones: juntar ramas se pone en el master y fusiona con el comando git merge Test
+
+GITHUB: tener nuestros proyectos en la nube
+git clone "https://ejemplo.com"... de git pasar proyecto de github a nuestra computadora
+git remote... vincula nuestro proyecto local con nuestro proyecto remoto
+(Ejemplo) git remote add origin https://github.com/kacr-kc/pruebaCurso.git
+git remote -v ... muestra resultados
+git remote remove origin ... elimina, quita conexión
+git push origin "rama" ... pasar de local a github
+
+issues son una forma continuar, mejorar o solucionar un error en nuestros
+repositorios (proyectos). Esto se hace en gitHub
+
+Milestones Son grupos de issues que aplican para un proyecto, característica
+o periodo de tiempo. es para parte de versiones
+
+Labels son una manera de organizar diferentes tipos de problemas
+
+6 - GIT TAGS
+
+git commit --amend -m "Cambio en h3" ... Modifica descripción del commit último
+git push origin master -f ... fuerza a github a subir el cambio
+
+git tag -a v0.8 -m "Version 0.8 de nuestro proyecto" ... tag anotadas, comando aplica al último commit
+git log ... copia el código
+git tag -a v0.8 -m "Version 0.1 de nuestro proyecto" <<copia codigo anterior>>
+git tag v1.0 ... tag ligeras
+
+subirlo a gitHub
+git push origin v0.8 ... sube solamente una versión de tags
+git push origin --tags ... se encarga de subir todos los tags
+
+7 - WORKFLOWS
+
+- git branch -a ... muestra las ramas ocultas
+- git fetch origin ... 
+- git merge origin/master
+- git push origin mater
+
+Pc 2
+git add -A
+git commit -m "Agregamos un nuegvo artículo"
+git log
+sube a github
+git push origin master
+git remote -v
+git remote remove origin
+git remote add origin "link de la comunidad"
+
+Pc 1
+git fetch origin ... jala la  informacion a origin rama oculta
+git merge origin/master ... 
+git log ... actualiza commit
+
+proyecto de tercero
+- fork
+- git push origin master ... se sube al repositorio local, no se sube a la organización
+
+8. Github pages <<dominio gratuito>>
+Organización o personal
+- kacr-kc.github.io
+
+- proyecto
+- git branch gh-pages ... crea rama y todo lo que se hace es para la página
+- git branch
+- git push origin gh-pages
+para ver sitio web - comunidad-codigofacilito.github.io/gitfacilito
+
+9. Deployment con git
+Llave con SSH: Nos sirve para conectarnos fácilmente a un servidor
+- ssh-keygen ... Llave pública o llave privada ... enter para dejarlo en home
+- ls -rf ... incluye archivos oculto
+- cd .ssh
+- ls ... id-rsa es llave privada y la otra es llave pública
+- cat id-rsa.pub
+- github, configuration y en la parte ssh keys y le agrega contraseña
+- git remote add origin "enlace ssh"
+- git log
+- touch .gitignore ... para evitar que estén archivos que estén en un repositorio remoto
+- git add -A
+- git commit -m "Se agrego google+"
+- git push origin <<rama>> 
+
+cloug.digitalocean.com/droplets (se usa esto porque sirve ssh)
+configuración, security y llave pública
+- ssh root@<<nombreBlog>>.com ... esto solamente en digitalocean
+- cd var/www/ghost/content/themes
+- cd filiSantillan
+- git pull origin <<rama>> ... es una combinación de fetch + merge lo usa al mismo tiempo
+- ssh-keygen
+- ls -rf
+- cd .ssh
+- ls
+- cat id_rsa.pub
+Entra a gitHub y asigna código de servidor
+- clear
+- cd ../var/www/ghost/content/themes/fili
+- git pull origin <<rama>> 
+- git log
+- clear
+- sudo service ghost restart ... reiniciar el servidor
+
+10. git hook
+- cd .git
+- cd hooks
+- ls
+- touch post-commit
+- ls
+- nano post-commit
+#!/bin/sh
+git push origin <<rama>>
+ssh root@filisantilla.com 'bash -s' < deployment.sh
+#ctrl-x -- guarda cambios
+- cat post-commit
+- chmod +x post-commit
+- cd ../..
+- touch deployment.sh
+- nano deployment.sh
+#!/bin/sh
+cd ../var/www/ghost/content/themes/FiliSantillan
+git pull origin <<master>> ...	<<rama>>
+sudo service ghost restart 
+- git add -A
+- git commit -m "mensaje"
+
+
+
+git checkout -b codifica_ origin/codei
