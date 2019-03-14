@@ -56,10 +56,8 @@ public class Calculadora {
 				}
 				else if(operacion_a_realizar==5)
 				{//Exponente
-                                    
-					resultado = (int) getExpoente(getPedirNumero1(), getPedirNumero2());
-					System.out.println("El resultado es: "+ resultado);
-					
+					resultado =getExpoente(getPedirNumero1(), getPedirNumero2());
+					System.out.println("El resultado es: "+ resultado);			
 				}
 				else if(operacion_a_realizar==6)
 				{//Modulo
@@ -82,29 +80,27 @@ public class Calculadora {
 		return numero2;
 	}
 	//Metodo get para calcular la suma entre dos numeros
-    public static int getSuma(int numero1,int numero2)
-    {
+        public static int getSuma(int numero1,int numero2)
+        {
     	return(numero1+numero2);
-    }
-	//Metodo get para calcular el modulo entre dos numeros
-	public static int getModulo(int divisor,int dividendo)
-	{
-		return (divisor%dividendo);
-	}
-        
-    //Metodo get para calcular la division entre dos numeros
+        }
+        //Metodo get para calcular la division entre dos numeros
 	public static int getDivision(int numero1,int numero2)
 	{
 		return(numero1/numero2);
 	}
 	//Metodo get para calcular el exponente de un numero
-	public static double getExpoente(int numero1, int numero2)
+	public static int getExpoente(int numero1, int numero2)
 	{
-		double num1,num2;
-          
-		num1 = numero1*1.0;
-		num2 = numero2*1.0;
-		return (Math.pow(num1, num2));
+		//double num1,num2;
+		//num1 = numero1*1.0;
+		//num2 = numero2*1.0;
+		return ((int)(Math.pow(numero1, numero2)));
+	}
+        //Metodo get para calcular el modulo entre dos numeros
+	public static int getModulo(int divisor,int dividendo)
+	{
+		return (divisor%dividendo);
 	}
     
 }
