@@ -8,7 +8,8 @@ public class Calculadora {
 	private static int numero2;
 	private static int resultado;
 	private static int operacion_a_realizar;
-	
+
+    
 	public Calculadora()
 	{
 		numero1=0;
@@ -47,7 +48,8 @@ public class Calculadora {
 				}
 				else if(operacion_a_realizar==3)
 				{//Multiplicacion
-					
+ 					resultado=getMultiplicacion(getPedirNumero1(), getPedirNumero2());
+					System.out.println("La multiplicación es: "+resultado);
 				}
 				else if(operacion_a_realizar==4)
 				{//Division
@@ -102,5 +104,10 @@ public class Calculadora {
 	{
 		return (divisor%dividendo);
 	}
+        public static int getMultiplicacion(int pedirNumero1, int pedirNumero2) {
+        
+               return (pedirNumero1 * pedirNumero2);
+        }
+	
     
 }
