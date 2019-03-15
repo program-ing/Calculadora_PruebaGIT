@@ -44,6 +44,8 @@ public class Calculadora {
 				}
 				else if(operacion_a_realizar==2)
 				{//Resta
+					resultado=getResta(getPedirNumero1(), getPedirNumero2());
+					System.out.println("La resta es: "+resultado);
 					
 				}
 				else if(operacion_a_realizar==3)
@@ -109,5 +111,11 @@ public class Calculadora {
                return (pedirNumero1 * pedirNumero2);
         }
 	
+        //Metodo get para calcular la resta entre dos numeros
+        public static int getResta(int pedirNumero1, int pedirNumero2) {
+            
+            return (pedirNumero1 - pedirNumero2);
+     }
+
     
 }
